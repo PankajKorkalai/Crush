@@ -80,3 +80,17 @@ papers.forEach(paper => {
   const p = new Paper();
   p.init(paper);
 });
+
+
+// Select the audio element
+const audio = document.getElementById('background-song');
+
+// Play audio on any user interaction
+document.body.addEventListener('click', () => {
+  audio.play().catch(error => console.log('Autoplay failed:', error));
+});
+
+// Optional: Attempt autoplay on page load
+window.addEventListener('load', () => {
+  audio.play().catch(error => console.log('Autoplay failed on load:', error));
+});
